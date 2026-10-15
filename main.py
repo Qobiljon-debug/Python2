@@ -306,3 +306,178 @@
 # def sum_numbers(n):
 #     return sum(range(1, n + 1))
 # print(sum_numbers(10))
+
+
+# ///////////////////////////////////////// 3 RYZ KLASS TASK ///////////////////////////////
+
+# def box (n):
+
+#     if n==1:
+#         return 1
+#     if(n % 2 == 0 or n % 3 == 0) and (n % 6 != 0):
+#         return n+box(n-1)
+#     return box (n-1)
+
+# print(box(10))
+
+# task 8
+
+# n1=int(input())
+# q1=int(input())
+# def multiple(n):
+#     def my_inner(q):
+#         return n1*q1
+#     return my_inner
+# hosili_zarb=multiple(n1)
+# print(hosili_zarb(q1))
+
+# task 9
+
+# sum=0
+# def accumulator():
+#    def my_inner(n):
+#       global sum
+#       sum+=n
+#       return sum
+#    return my_inner
+# summa=accumulator()
+# print(summa(5))
+# print(summa(10))
+# print(summa(20))
+
+#task 10
+
+# count=0
+# def attempt(limit):
+#    def my_inner():
+#       global count
+#       count+=1
+#       if count<=limit:
+#          return f"Attempt {count}"
+#       else:
+#          return "Mytasifona Limiti shumo ba anjom rasid!"
+#    return my_inner
+# cnt=attempt(10)
+# print(cnt()) 
+# print(cnt())
+# print(cnt())
+# print(cnt())
+# print(cnt())
+# print(cnt())
+# print(cnt())
+# print(cnt())
+# print(cnt())
+# print(cnt())
+# print(cnt())
+
+#task 11
+
+# def bank_account(balance):
+#     def deposit(amount):
+#          nonlocal balance
+#          balance+=amount
+#          return balance
+#     def withdraw(amount):
+#          nonlocal balance
+#          if balance < amount:
+#             return "Not enough money!"
+#          balance-=amount
+#          return balance
+#     return deposit,withdraw
+# deposit,withdraw=bank_account(1000)
+# print(deposit(500))
+# print(withdraw(300))
+# print(withdraw(1500))
+
+#task 12
+
+# def time_greeting(period):
+#     def my_inner(name):
+#         if period=="morning":
+#             return f"Goog morning {name}"
+#         elif period=="afternoon":
+#             return f"Good afternoon {name}"
+#         else:
+#             return f"Good night {name}"
+#     return my_inner
+# men=time_greeting("night")
+# print(men("Abdulvahhob"))
+
+# task 13
+
+# def logger():
+#     history = []  
+#     def log(message):
+#         nonlocal history
+#         history.append(message)  
+#         return history           
+#     return log
+# my_log = logger()
+# print(my_log("start"))    
+# print(my_log("process"))  
+# print(my_log("end"))
+
+#1
+# def n(b,a=1):
+#     if a==b:
+#         return b
+#     print (a)
+#     return n(b, a+1)
+
+# print(n(10))
+
+#2
+# def s(a,b):
+#     if b==a:
+#         return b
+#     print(a)
+#     return s(b, a+1)
+    
+# print(s(10))
+
+
+#3
+# def s(a,b):
+#     if a==b:
+#         return a
+#     print(a)
+#     return s(a+1,b)
+    
+# print(s(3,7))
+
+#1
+# def box(name):
+#     print(name)
+#     def box2(hello):
+#         print(hello)
+
+#         box("Ali")
+
+
+#2
+# def time_greeting(name, morning):
+#     def greet():
+#         return f"Good {morning.lower()}, {name}!"
+#     return greet
+# f = time_greeting("Aziz", "morning")
+# print(f())
+
+#3
+# def logger():
+#     history = []
+#     def log(message):
+#         history.append(message)
+#         return history
+#     return log
+# log = logger()
+# print(log("start"))     
+# print(log("process"))   
+# print(log("end"))       
+
+#4
+# def temperature_converter(scale):
+#     if scale == "c":
+#         return lambda t: (t * 9/5) + 32
+#     return lambda t: (t - 32) * 5/9
+# convert = temperature_converter("c")
+# print(convert(100))  
