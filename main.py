@@ -481,3 +481,526 @@
 #     return lambda t: (t - 32) * 5/9
 # convert = temperature_converter("c")
 # print(convert(100))  
+
+# ////////////////////////////////// 4 Home Task ///////////////////////////////////////////////////////
+
+#5
+# def outer():
+#     def inner():
+#         print("This is inner fanction")
+
+#     inner()
+
+# try:
+#     outer()
+# except NameError:
+#     print("inner not defoind")
+
+
+#6
+# def rectangle_info (w,h):
+#     def area ():
+#         x=h*w
+#         return x
+#     def perimetr():
+#         y=2*(w+h)
+#         return y
+#     print("Area: ",area())
+#     print('Perimetr: ',perimetr())
+# rectangle_info(4,5)
+
+
+#7
+# def calc_average(*args):
+#     sum=0
+#     cnt=0
+
+#     def total():
+#         nonlocal sum,cnt
+#         for i in args:
+#             sum+=i
+#             cnt+=1 
+#         print(sum/cnt)
+#     return total()
+# calc_average(2,4,6)
+
+
+#8
+# def print_receipt(items):
+#     def line(name, prise):
+#         return f'{name}:{prise}'
+#     total=0
+#     for name, prise in items.items(): 
+#         print(line(name,prise))
+#         total+=prise
+#     print(f'total: {total}')
+# print_receipt({"tea": 12, "bread": 3.5}) 
+
+
+#9
+# def validate_password(pwd):
+#     def has_digit():
+#         for i in pwd:
+#             if i.isdigit():
+#                 return True
+#         return False
+#     def has_upper():
+#         for i in pwd:
+#             if i.isupper():
+#                 return True
+#         return False
+#     return len(pwd) >=8 and has_digit() and has_upper()
+# print(validate_password("Python123"))  # True
+# print(validate_password("python123"))  # False
+
+
+#10
+# def make_table(n):
+#     def row(i):
+#         return f'{n}+{i}={n*i}'
+#     for i in range(1,6):
+#         print(row(i))
+
+# make_table(7)
+
+
+#11
+# def level1():
+#     print('Level 1')
+#     def level2():
+#         print('Level 2')
+#     level2()     
+#     def level3():
+#         print('Level 3')
+#     level3()
+# level1()
+
+
+#12
+# def calc_discount(prise,present):
+#     def calc_discount():
+#         return(prise*10)/100
+#     return calc_discount()
+# print()
+
+
+#13
+# def make_adder(x):
+#     def add(y):
+#         return x+y
+#     return add
+# add5 = make_adder(5)
+# add10 = make_adder(10)
+# print(add5(3))  
+# print(add10(3))
+
+
+#14
+# def power_creator(exp):
+#     def power(base):
+#         return base ** exp
+#     return power
+# square = power_creator(2)
+# cube = power_creator(3) 
+# fourth = power_creator(4)  
+# print(square(4)) 
+# print(cube(2))   
+# print(fourth(2)) 
+
+#15
+# def make_multiplier(n):
+#     def multiplier(x):
+#         return x * n
+#     return multiplier
+# double = make_multiplier(2) 
+# triple = make_multiplier(3) 
+# print(double(7))  
+# print(triple(7))  
+
+#16
+# def make_greeter(hello):
+#     def greeter(name):
+#         return f"{hello}, {name}!"
+#     return greeter
+# hi = make_greeter("Salom")
+# hello = make_greeter("Hello")
+# print(hi("Ali"))  
+# print(hello("Zarina"))
+
+# #17/////////////////////////////natavonistam//////////
+# def make_adder(x):
+#     def add(y):
+#         return x + y
+#     return add
+# add5 = make_adder(5)
+# print(type(add5))
+# print(add5.__name__)   
+
+#18
+# def make_adder(x):
+#     def add(y):
+#         return x + y
+#     return add
+# add5 = make_adder(5)
+# print(add5.__closure__[0].cell_contents)  
+
+#19
+# def outer_func():
+#     x = 10  
+#     def inner_func():
+#         return "Salom"  
+#     return inner_func
+# my_func = outer_func()
+# print(my_func.__closure__) 
+
+#20
+# def make_discount(percent):
+#     def discount(price):
+#         return price * (1 - percent / 100)
+#     return discount
+# sale10 = make_discount(10) 
+# sale25 = make_discount(25) 
+# print(sale10(200))  
+# print(sale25(200)) 
+
+#21
+# def make_converter(rate):
+#     def converter(amount):
+#         return amount * rate
+#     return converter
+# usd_to_tjs = make_converter(11)
+# print(usd_to_tjs(100))  
+
+#22
+# def make_tag(tag):
+#     def wrap(text):
+#         return f"<{tag}>{text}</{tag}>"
+#     return wrap
+# bold = make_tag("b")
+# print(bold("Hi")) 
+
+#23
+# def make_checker(min_len):
+#     def check(text):
+#         return len(text) >= min_len
+#     return check
+# check8 = make_checker(8)
+# print(check8("qwerty")) 
+# print(check8("qwerty123"))  
+
+#24
+# def make_in_range(low, high):
+#     def check(number):
+#         return low <= number <= high
+#     return check
+# is_teen = make_in_range(13, 19)
+# print(is_teen(15))  
+# print(is_teen(25)) 
+
+#25
+# def make_word_filter(banned):
+#     def filter_text(text):
+#         for word in banned:
+#             text = text.replace(word, "***")
+#         return text
+#     return filter_text
+# clean = make_word_filter({"bad"})
+# print(clean("this is bad word"))  
+
+#26
+# def make_logger(prefix):
+#     def log(message):
+#         print(f"{prefix}, {message}")
+#     return log
+# info = make_logger("INFO")
+# error = make_logger("ERROR")
+
+# info("Started") 
+# error("File missing") 
+
+#27
+# def outer_func():
+#     outer_var = 10  
+#     def inner_func():
+#         outer_var = 20  
+#         print("Inner:", outer_var)  
+#     inner_func()
+#     print("Outer:", outer_var)  
+# outer_func()
+
+#28
+# def counter():
+#     cnt=0
+#     def c():
+#         nonlocal cnt
+#         cnt+=1
+#         return cnt
+#     return c
+# c = counter()
+# print(c())  # 1
+# print(c())  # 2
+# print(c())  # 3
+
+# 29
+# def make_counters():
+#     cnt1 = 0
+#     cnt2 = 0
+    
+#     def inc1():
+#         nonlocal cnt1
+#         cnt1 += 1
+#         return cnt1
+#     def inc2():
+#         nonlocal cnt2
+#         cnt2 += 1
+#         return cnt2
+#     return inc1, inc2
+
+# cnt1, cnt2 = make_counters()
+# print(cnt1())  # 1
+# print(cnt1())  # 1
+# print(cnt2())  # 2
+
+#30
+# def counter(start=0, step=1):
+#     current = start
+#     def c():
+#         nonlocal current
+#         current += step
+#         return current
+#     return c
+# c = counter(10, 5)
+# print(c(), c(), c())  # Output: 15 20 25
+
+
+#31
+# def make_countdown(n):
+#     def countdown():
+#         nonlocal n
+#         if n > 0:
+#             current = n
+#             n -= 1
+#             return current
+#         return "Done!"
+#     return countdown
+# cd = make_countdown(3)
+# print(cd(), cd(), cd(), cd())  # Output: 3 2 1 Done!
+
+#32
+# def make_accumulator():
+#     total = 0
+#     def accumulate(value):
+#         nonlocal total
+#         total += value
+#         return total
+#     return accumulate
+# acc = make_accumulator()
+# print(acc(10))  # Output: 10
+# print(acc(5))   # Output: 15
+# print(acc(20))  # Output: 35
+
+#33
+# def make_average():
+#     total = 0
+#     count = 0
+#     def add(number):
+#         nonlocal total, count
+#         total += number
+#         count += 1
+#         return total / count
+#     return add
+# avg = make_average()
+# print(avg(10))  # Output: 10.0
+# print(avg(20))  # Output: 15.0
+# print(avg(30))  # Output: 20.0
+
+#34
+# def make_history():
+#     history = []
+#     def add(item):
+#         history.append(item)  
+#         return history
+#     return add
+# h = make_history()
+# print(h("a"))  # Output: ['a']
+# print(h("b"))  # Output: ['a', 'b']
+
+#35
+# def make_toggle():
+#     state = False
+#     def toggle():
+#         nonlocal state
+#         state = not state  
+#         return state
+#     return toggle
+# t = make_toggle()
+# print(t(), t(), t())  # Output: True False True
+
+
+# ////////////////////////////////////////////////////////////// 5 Home Work /////////////////////////////////////////////////////
+
+# import time
+# import functools
+# def decorator_1(func):
+#     def wrapper():
+#         print("Before function")
+#         func()
+#         print("After function")
+#     return wrapper
+# def say_hello_1():
+#     print("Hello")
+# new_func=decorator_1(say_hello_1)
+# new_func()
+# def decorator(func):
+#     def wrapper():
+#         print("Before function")
+#         func()
+#         print("After function")
+#     return wrapper
+# @decorator
+# def say_hello():
+#     print("Hello")
+# say_hello()
+# @decorator
+# def say_bye():
+#     print("Bye")
+# say_hello()
+# say_bye()
+# new_func_4=decorator_1(say_hello_1)
+# new_func_4()
+# print("---")
+# say_hello_1()
+# def stars(func):
+#     def wrapper(*args,**kwargs):
+#         print("*****")
+#         res=func(*args,**kwargs)
+#         print("*****")
+#         return res
+#     return wrapper
+# @stars
+# def show_python():
+#     print("Python")
+# show_python()
+# def decorator_arg(func):
+#     def wrapper(name):
+#         print("Before function")
+#         func(name)
+#         print("After function")
+#     return wrapper
+# @decorator_arg
+# def greet_arg(name):
+#     print(f"Hello, {name}")
+# greet_arg("Ali")
+# def universal_decorator(func):
+#     def wrapper(*args,**kwargs):
+#         print("Before function")
+#         res=func(*args,**kwargs)
+#         print("After function")
+#         return res
+#     return wrapper
+# @universal_decorator
+# def add_uni(a,b):
+#     print(a+b)
+# @universal_decorator
+# def greet_uni(name):
+#     print(f"Hello, {name}")
+# add_uni(2,3)
+# greet_uni(name="Ali")
+# def decorator_return(func):
+#     def wrapper(*args,**kwargs):
+#         return func(*args,**kwargs)
+#     return wrapper
+# @decorator_return
+# def add_ret(a,b):
+#     return a+b
+# print(add_ret(2,3))
+# def uppercase(func):
+#     def wrapper(*args,**kwargs):
+#         result=func(*args,**kwargs)
+#         return result.upper()
+#     return wrapper
+# @uppercase
+# def say_hello_up():
+#     return "Hello, Ali"
+# print(say_hello_up())
+# def double_result(func):
+#     def wrapper(*args,**kwargs):
+#         return func(*args,**kwargs)*2
+#     return wrapper
+# @double_result
+# def get_number():
+#     return 7
+# print(get_number())
+# def hello_line(func):
+#     def wrapper(*args,**kwargs):
+#         print("Hi!")
+#         return func(*args,**kwargs)
+#     return wrapper
+# @stars
+# @hello_line
+# def say_double():
+#     print("Python")
+# say_double()
+# def count_calls(func):
+#     count=0
+#     def wrapper(*args,**kwargs):
+#         nonlocal count
+#         count+=1
+#         print(f"Call {count}")
+#         return func(*args,**kwargs)
+#     return wrapper
+# @count_calls
+# def say_hi_count():
+#     print("Hi")
+# say_hi_count()
+# say_hi_count()
+# def logger(func):
+#     def wrapper(*args,**kwargs):
+#         print(f"Calling {func.name} with {args}")
+#         res=func(*args,**kwargs)
+#         print(f"{func.name} returned {res}")
+#         return res
+#     return wrapper
+# @logger
+# def add_log(a,b):
+#     return a+b
+# add_log(2,3)
+# def timer(func):
+#     def wrapper(*args,**kwargs):
+#         start=time.perf_counter()
+#         res=func(*args,**kwargs)
+#         end=time.perf_counter()
+#         print(f"{func.name} took {round(end-start,1)} sec")
+#         return res
+#     return wrapper
+# @timer
+# def slow():
+#     time.sleep(0.2)
+# slow()
+# def only_positive(func):
+#     def wrapper(*args,**kwargs):
+#         if any(isinstance(arg,(int,float)) and arg<0 for arg in args):
+#             print("Negative numbers not allowed")
+#             return None
+#         return func(*args,**kwargs)
+#     return wrapper
+# @only_positive
+# def calc_pos(x):
+#     return x*2
+# print(calc_pos(6))
+# print(calc_pos(-4))
+# def safe_divide(func):
+#     def wrapper(*args,**kwargs):
+#         try:
+#             return func(*args,**kwargs)
+#         except ZeroDivisionError:
+#             return "Cannot divide by zero"
+#     return wrapper
+# @safe_divide
+# def divide(a,b):
+#     return a/b
+# print(divide(10,2))
+# print(divide(5,0))
+# def require_login(func):
+#     def wrapper(user,*args,**kwargs):
+
