@@ -1004,3 +1004,279 @@
 # def require_login(func):
 #     def wrapper(user,*args,**kwargs):
 
+# ///////////////////////////////////////////////////// Home Work //////////////////////////////////////
+# class Car:
+#     def init(self,brand,year,color,price):
+#         self.brand=brand
+#         self.year=year
+#         self.color=color
+#         self.price=price
+
+#     def sell(self):
+#         print(f"price of this car is  {self.price}")
+#     def info(self):
+#         print(f"brand of this car is {self.brand} and year of this car is {self.year} and color of this car is {self.color}")
+#     def discout(self):
+#         print(f"{self.price -100}")
+
+# car1=Car("Toyota",2020,"Red",20000)
+
+# car2=Car("Honda",2021,"Blue",25000)
+
+# car1.discout()
+# car1.info()
+# car2.discout()
+# car2.info()
+
+# class Employee:
+#     def __init__(self,name,position,salary):
+#         self.name=name
+#         self.position=position
+#         self.salary=salary
+
+#     def info(self):
+#         print(f'{self.name} - {self.position} - {self.salary}')
+
+#     def add_salary(self,present):
+#         res=self.salary * present // 100
+#         self.salary+=res
+
+#         print(f'now salary is {self.salary}')
+
+#     def change_position(self,new_position):
+#         self.position is self.position
+#         print(f'Now new position is {self.position}')
+
+# eml=Employee('Numon','CEO',100)
+
+# eml.info()
+# eml.add_salary(50)
+# eml.change_position('Admin')
+
+
+# class Company:
+#     def __init__(self, name):
+#         self.name=name
+#         self.employee=[]
+
+#     def add_employee(self,name):
+#         self.employee.append(name)
+
+#     def delete_employee(self,name):
+#         self.employee.remove(name)
+
+#     def show_all(self):
+#         print(f'Company name - {self.name}')
+#         for i in self.employee:
+#             print(f'{i} - employee')
+
+# cl=Company("Megafon")
+
+# cl.add_employee('Abdulvahob') 
+# cl.add_employee('Numon') 
+# cl.add_employee('Ali') 
+# cl.add_employee('Arsen') 
+# cl.delete_employee('Numon')
+
+# cl.show_all()
+
+
+
+
+
+# class Product:
+#     def init(self, name, cotegory, price, rate, patern,):
+#         self.name = name
+#         self.cotegory = cotegory
+#         self.price = price
+#         self.rate = rate
+#         self.patern = patern
+#     def info(self):
+#         print(self.name,self.cotegory,self.price,self.rate,self.patern)
+#     def imeetsy(self):
+#         return self.patern>0
+#     def discount(self, percent):
+#         self.price=self.price-self.price*percent/100
+# class Customer:
+#     def init(self,name,email, balance):
+#         self.name=name
+#         self.email=email
+#         self.balance=balance
+#         self.kupil=[]
+#     def add_balance(self, amount):
+#         self.balance += amount
+#     def buy(self, product):
+#         if product.patern>0 and self.balance>=product.price:
+#             self.balance-=product.price
+#             product.patern-=1
+#             self.kupil.append(product.name)
+#             print(self.name, "приобрёл", product.name)
+# class Store:
+#     def init(self, name):
+#         self.name = name
+#         self.products=[]
+#         self.customers=[]
+#     def add_product(self, product):
+#         self.products.append(product)
+#     def add_customer(self,customer):
+#         self.customers.append(customer)
+#     def show_products(self):
+#         for product in self.products:
+#             product.info()
+#     def find_product(self, name):
+#         for product in self.products:
+#             if product.name == name:
+#                 return product
+
+# store = Store("Tecno")
+# product1=Product("Телефон", "(Электроника)",1000,"Оценка-",5)
+# product2=Product("Ноутбук", "(Электронника)", 200,"Оценка-",4)
+# product3=Product("Наушники", "(Электроника)",300,"Оценка-",4)
+# product4=Product("Рюкзак", "(Аксессуары)", 500,"Оценка-",5)
+# product5=Product("Чехол", "(Аксессуары)", 150,"Оценка-",3)
+# print
+
+# store.add_product(product1)
+# store.add_product(product2)
+# store.add_product(product3)
+# store.add_product(product4)
+# store.add_product(product5)
+# c1 = Customer("Аlijon", "ali@mail.com", 2000)
+# c2 = Customer("Numon", "Numon@mail.com", 5000)
+# store.add_customer(c1)
+# store.add_customer(c2)
+
+# c1.buy(product1)
+# c2.add_balance(300)
+# c2.buy(product2)
+# product3.discount(10)
+# store.show_products()
+# print("Покупки Аlijin:", c1.kupil)
+# print("Покупки Numon:", c2.kupil)
+
+
+
+# //////////////////////////////////////// Home Work ///////////////////////////////////////////////////////
+
+# class Student:
+#     school='School number 72'
+
+
+#     def __init__(self,students,name):
+#         self.students=students
+#         self.name=name
+
+#     def __len__(self):
+#         return len(self.students)
+
+#     def __eq__(self, name2):
+#             return self.name==name2
+
+
+# st=Student(['Ali','Vali'],'Ardesher')
+# st2=Student(['Ali','Vali'],'Ardesher')
+
+# print(st==st2)
+
+#2
+# class Student:
+
+#     def __init__(self,rakam):
+#         self.rakam=rakam
+
+#     def __add__(self, number2):
+#         return self.rakam + number2.rakam
+
+# st=Student(6)    
+# st2=Student(1)    
+# print(st+st2)
+
+
+#3
+# class Student:
+#     def __init__(self,students):
+#         self.students=students
+
+#     def __getitem__(self, index):
+#         return self.students[index]
+
+
+# st=Student(['Ali','Vali', 'Saidvali'])
+# print(st[2])
+
+
+#4
+# class Student:
+#     next_id=0
+#     Students=[]
+
+#     def create(self,name,age):
+#         user={
+#             'id':self.next_id,
+#             'name':name,
+#             'age':age
+#         }
+
+#         self.Students.append(user)
+
+#         self.next_id+=1
+
+#     def show_students(self):
+#         for i in self.Students:
+#             print(i)
+
+#     def update(self,id,new_name):
+#         for i in self.Students:
+#             if i['id']==id:
+#                 i['name']=new_name
+#                 return
+
+#         print('user not found')
+
+#     def delete(self,id):
+#         for i in self.student:
+#             if i['id']==id:
+#                 self.students.pop(i['id'])
+
+#     def delete(self,id):
+#         for i in self.students:
+#             if i['id']==id:
+#                 self.students.pop(i['id'])
+
+
+# st1=Student()
+# st1.create('sibhatullo',18)
+# st1.create('Arsen',15)
+# st1.create('Abduvvahob',17)
+
+# st1.delete(2)
+
+# st1.show_students()
+
+# st1.update(2,'Numon')
+
+# st1.show_students()
+
+# class Book:
+#     def delete(self,lib):
+#         def delete(lib):
+
+# lib = Library()
+# lib.add_book(Book("1984", "George Orwell", 1949))
+# lib.add_book(Book.from_string("Animal Farm;George Orwell;1945"))
+# lib.add_book(Book("Dune", "Frank Herbert", 1965))
+# lib.add_book(Book("1984", "George Orwell", 1950))   
+# lib.add_book(Book("Future Book", "Unknown", 3000)) 
+
+# print(len(lib))
+# print(lib[0])
+
+# for b in lib.find_by_author("George Orwell"):
+#     print(b)
+
+# lib.update_year(3, 1966)
+# print(lib[2])
+
+# lib.remove_book(1)
+# print(len(lib))
+# print(Book.count)
