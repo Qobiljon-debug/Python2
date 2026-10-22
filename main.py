@@ -1257,26 +1257,88 @@
 
 # st1.show_students()
 
-# class Book:
-#     def delete(self,lib):
-#         def delete(lib):
+class Book:
+    count = 0
 
-# lib = Library()
-# lib.add_book(Book("1984", "George Orwell", 1949))
-# lib.add_book(Book.from_string("Animal Farm;George Orwell;1945"))
-# lib.add_book(Book("Dune", "Frank Herbert", 1965))
-# lib.add_book(Book("1984", "George Orwell", 1950))   
-# lib.add_book(Book("Future Book", "Unknown", 3000)) 
+    def __init__(self, title, author, year):
+        Book.count += 1
+        self.id = Book.count
+        self.title = title
+        self.author = author
+        self.year = int(year)
 
-# print(len(lib))
-# print(lib[0])
+    @classmethod
+    def from_string(cls, text):
+        title, author, year = text.split(";")
+        return cls(title, author, int(year))
 
-# for b in lib.find_by_author("George Orwell"):
-#     print(b)
+    @staticmethod
+    def is_valid_year(year):
+        return 1450 <= year <= 2026
 
-# lib.update_year(3, 1966)
-# print(lib[2])
+    def __eq__(self, other):
+        if isinstance(other, Book):
+            return self.title == other.title and self.author == other.author
+        return False
 
-# lib.remove_book(1)
-# print(len(lib))
-# print(Book.count)
+    def __str__(self):
+        return f"#{self.id} '{self.title}' by {self.author} ({self.year})"
+
+
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book):
+        if not Book.is_valid_year(book.year):
+            print("Error: invalid year")
+            return False
+        if any(b == book for b in self.books):
+            print("Error: book already exists")
+            return False
+        self.books.append(book)
+        return True
+
+    def find_by_author(self, author):
+        return [b for b in self.books if b.author == author]
+
+    def update_year(self, book_id, new_year):
+        if not Book.is_valid_year(new_year):
+            print("Error: invalid year")
+            return False
+        for b in self.books:
+            if b.id == book_id:
+                b.year = int(new_year)
+                return True
+        return False
+
+    def remove_book(self, book_id):
+        self.books = [b for b in self.books if b.id != book_id]
+
+    def __len__(self):
+        return len(self.books)
+
+    def __getitem__(self, index):
+        return self.books[index]
+
+
+lib = Library()
+lib.add_book(Book("1984", "George Orwell", 1949))
+lib.add_book(Book.from_string("Animal Farm;George Orwell;1945"))
+lib.add_book(Book("Dune", "Frank Herbert", 1965))
+lib.add_book(Book("1984", "George Orwell", 1950))   # дубликат
+lib.add_book(Book("Future Book", "Unknown", 3000))  # неверный год
+
+print(len(lib))
+print(lib[0])
+
+for b in lib.find_by_author("George Orwell"):
+    print(b)
+
+lib.update_year(3, 1966)
+print(lib[2])
+
+lib.remove_book(1)
+print(len(lib))
+print(Book.count)
+
