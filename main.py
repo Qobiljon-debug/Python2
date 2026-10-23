@@ -1257,88 +1257,315 @@
 
 # st1.show_students()
 
-class Book:
-    count = 0
+# class Book:
+#     count = 0
 
-    def __init__(self, title, author, year):
-        Book.count += 1
-        self.id = Book.count
-        self.title = title
-        self.author = author
-        self.year = int(year)
+#     def __init__(self, title, author, year):
+#         Book.count += 1
+#         self.id = Book.count
+#         self.title = title
+#         self.author = author
+#         self.year = int(year)
 
-    @classmethod
-    def from_string(cls, text):
-        title, author, year = text.split(";")
-        return cls(title, author, int(year))
+#     @classmethod
+#     def from_string(cls, text):
+#         title, author, year = text.split(";")
+#         return cls(title, author, int(year))
 
-    @staticmethod
-    def is_valid_year(year):
-        return 1450 <= year <= 2026
+#     @staticmethod
+#     def is_valid_year(year):
+#         return 1450 <= year <= 2026
 
-    def __eq__(self, other):
-        if isinstance(other, Book):
-            return self.title == other.title and self.author == other.author
-        return False
+#     def __eq__(self, other):
+#         if isinstance(other, Book):
+#             return self.title == other.title and self.author == other.author
+#         return False
 
-    def __str__(self):
-        return f"#{self.id} '{self.title}' by {self.author} ({self.year})"
-
-
-class Library:
-    def __init__(self):
-        self.books = []
-
-    def add_book(self, book):
-        if not Book.is_valid_year(book.year):
-            print("Error: invalid year")
-            return False
-        if any(b == book for b in self.books):
-            print("Error: book already exists")
-            return False
-        self.books.append(book)
-        return True
-
-    def find_by_author(self, author):
-        return [b for b in self.books if b.author == author]
-
-    def update_year(self, book_id, new_year):
-        if not Book.is_valid_year(new_year):
-            print("Error: invalid year")
-            return False
-        for b in self.books:
-            if b.id == book_id:
-                b.year = int(new_year)
-                return True
-        return False
-
-    def remove_book(self, book_id):
-        self.books = [b for b in self.books if b.id != book_id]
-
-    def __len__(self):
-        return len(self.books)
-
-    def __getitem__(self, index):
-        return self.books[index]
+#     def __str__(self):
+#         return f"#{self.id} '{self.title}' by {self.author} ({self.year})"
 
 
-lib = Library()
-lib.add_book(Book("1984", "George Orwell", 1949))
-lib.add_book(Book.from_string("Animal Farm;George Orwell;1945"))
-lib.add_book(Book("Dune", "Frank Herbert", 1965))
-lib.add_book(Book("1984", "George Orwell", 1950))   # дубликат
-lib.add_book(Book("Future Book", "Unknown", 3000))  # неверный год
+# class Library:
+#     def __init__(self):
+#         self.books = []
 
-print(len(lib))
-print(lib[0])
+#     def add_book(self, book):
+#         if not Book.is_valid_year(book.year):
+#             print("Error: invalid year")
+#             return False
+#         if any(b == book for b in self.books):
+#             print("Error: book already exists")
+#             return False
+#         self.books.append(book)
+#         return True
 
-for b in lib.find_by_author("George Orwell"):
-    print(b)
+#     def find_by_author(self, author):
+#         return [b for b in self.books if b.author == author]
 
-lib.update_year(3, 1966)
-print(lib[2])
+#     def update_year(self, book_id, new_year):
+#         if not Book.is_valid_year(new_year):
+#             print("Error: invalid year")
+#             return False
+#         for b in self.books:
+#             if b.id == book_id:
+#                 b.year = int(new_year)
+#                 return True
+#         return False
 
-lib.remove_book(1)
-print(len(lib))
-print(Book.count)
+#     def remove_book(self, book_id):
+#         self.books = [b for b in self.books if b.id != book_id]
 
+#     def __len__(self):
+#         return len(self.books)
+
+#     def __getitem__(self, index):
+#         return self.books[index]
+
+
+# lib = Library()
+# lib.add_book(Book("1984", "George Orwell", 1949))
+# lib.add_book(Book.from_string("Animal Farm;George Orwell;1945"))
+# lib.add_book(Book("Dune", "Frank Herbert", 1965))
+# lib.add_book(Book("1984", "George Orwell", 1950))   # дубликат
+# lib.add_book(Book("Future Book", "Unknown", 3000))  # неверный год
+
+# print(len(lib))
+# print(lib[0])
+
+# for b in lib.find_by_author("George Orwell"):
+#     print(b)
+
+# lib.update_year(3, 1966)
+# print(lib[2])
+
+# lib.remove_book(1)
+# print(len(lib))
+# print(Book.count)
+
+
+# ///////////////////////////////////////////////  Home Work ////////////////////////////////////////////////////////////////////////////
+
+# class Owner:
+#     def owner(self):
+#         print('Animal has owner')
+
+
+# class Animal(Owner):
+#     def sound(self):
+#         print('Animal can make a sound')
+
+
+# class Speed:
+#     def speed(self):
+#         print('This is fast')
+
+
+# class Dog(Animal,Speed):
+#     def hello(self):
+#         print('This is dog')
+
+# d=Dog()
+# d.hello()
+# d.sound()
+# d.speed()
+# d.owner()
+
+
+# class Cat(Animal):
+#     def hello(self):
+#         print('This is cat')
+
+
+# c=Cat()
+# c.hello()
+# c.sound()
+# c.owner()
+
+# class Library:
+#     def __init__(self,name,shelf):
+#         self.name=name
+#         self.shelf=shelf
+
+#     def info(self):
+#         print(f'{self.name} -- {self.shelf}')
+
+# l=Library('Kitobxonai milli',12345)
+# l.info()
+
+# class Department(Library):
+#     def __init__(self, name, shelf,department_name):
+#         super().__init__(name, shelf)
+#         self.department_name=department_name
+
+#     def malumot(self):
+#         print(f'{self.name} -- {self.shelf} -- {self.department_name}')
+
+# d1=Department('Kitobxonai milli',12345,'Classic')
+
+# d1.info()
+# d1.malumot()
+
+# class Cat:
+#     def hello(self):
+#         print('This is cat')
+
+
+# class Dog(Cat):
+#     def hello(self):
+#         print('This is Dog')
+
+
+# class Parrot(Dog):
+#     def hello(self):
+#         print('This is parrot')
+
+# d=Dog()
+# d.hello()
+
+# p=Parrot()
+# p.hello()
+
+
+
+#1
+# class Vehicle:
+#     def move(self):
+#         print("Транспорт движется")
+# class Car(Vehicle):
+#     def honk(self):
+#         print("Би-би!")
+# car=Car()
+# car.move()
+# car.honk()
+
+#2
+# class Employee:
+#     def work(self):
+#         print("Сотрудник работает")
+
+# class Programmer(Employee):
+#     def work(self):
+#         print("Пишет код")
+
+# class Teacher(Employee):
+#     def work(self):
+#         print("Проводит урок")
+# employee=Employee()
+# programmer=Programmer()
+# teacher=Teacher()
+# employee.work()
+# programmer.work()
+# teacher.work()
+
+
+#3
+# class Person:
+#     def init(self, name, age):
+#         self.name=name
+#         self.age=age
+
+# class Student(Person):
+#     def __init__(self,name,age,group):
+#         super().init(name,age)
+#         self.group=group
+#     def info(self):
+#         print(f"Студент: {self.name},|{self.age} лет,|группа {self.group}")
+
+# s=Student("Али",19,"Python-1")
+# s.info()
+
+
+#4
+# class Animal:
+#     def speak(self):
+#         print("Животное издаёт звук")
+
+# class Cat(Animal):
+#     def speak(self):
+#         super().speak()
+#         print("Мяу")
+
+# my_cat = Cat()
+# my_cat.speak()        
+
+
+#5
+# class Device:
+#     def power(self):
+#         print("Устройство включено")
+
+# class Phone(Device):
+#     def call(self, number):
+#         print(f"Звоню на номер {number}")
+
+
+# class Smartphone(Phone):
+#     def photo(self):
+#         print("Фото сделано")
+
+# my_smartphone = Smartphone()
+# my_smartphone.power()
+# my_smartphone.call("+992123456789")
+# my_smartphone.photo()
+
+
+#6
+# class Flyer:
+#     def fly(self):
+#         print("Лечу")
+
+# class Swimmer:
+#     def swim(self):
+#         print("Плыву")
+
+# class Duck(Flyer, Swimmer):
+#     def quack(self):
+#         print("Кря-кря")
+
+
+# my_duck = Duck()
+# my_duck.fly()
+# my_duck.swim()
+# my_duck.quack()
+
+# print(Duck.__mro__)
+
+#7
+# class User:
+#     def __init__(self, name, email):
+#         self.name = name
+#         self.email = email
+
+#     def get_info(self):
+#         return f"Имя: {self.name}, Email: {self.email}"
+
+
+# class Admin(User):
+#     def __init__(self, name, email, level):
+#         super().__init__(name, email)
+#         self.level = level
+
+#     def get_info(self):
+#         return f"{super().get_info()}, Уровень: {self.level}"
+
+
+# class Customer(User):
+#     def __init__(self, name, email, balance):
+#         super().__init__(name, email)
+#         self.balance = balance
+
+#     def get_info(self):
+#         return f"{super().get_info()}, Баланс: {self.balance}"
+
+
+# class Guest(User):
+#     def __init__(self, name, email):
+#         super().__init__(name, email)
+
+#     def get_info(self):
+#         return f"{super().get_info()}, Статус: Гость"
+
+# print(Admin("Али", "ali@mail.tj", 3).get_info())
+
+
+#8
