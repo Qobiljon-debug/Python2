@@ -1568,4 +1568,486 @@
 # print(Admin("Али", "ali@mail.tj", 3).get_info())
 
 
+# ////////////////////////////////////////////// Home Work //////////////////////////////////////////
+
+# class Car:
+#     country = 'Tajikistan'
+
+#     def __init__(self,brand,model,prise):
+#         self.brand=brand
+#         self.model=model
+#         self.prise=prise
+
+#     def drive(self):
+#         print("Drive")
+
+#     @classmethod
+#     def salom(cls):
+#         print(f"Salom {cls.country}")
+
+#     @staticmethod
+#     def v(a,b):
+#         return a + b
+#     def __str__(self):
+#         return self.company
+
+# car1=Car("BMW", "M5compition", 1000000000000000)
+# print(Car.v("salom", "Aleykum"))
+
+
+#1
+# class Student:
+#     def __init__(self, name, age, grade):
+#         self.name = name
+#         self.age = age
+#         self.grade = grade
+
+#     def __str__(self):
+#         return (f"Студент: {self.name}, Возраст: {self.age}, Оценка: {self.grade}")
+
+# student1 = Student("Ali", 20, "3")
+# student2 = Student("Vali", 22, "4")
+# student3 = Student("Saidvali", 19, "5")
+
+# print(student1)
+# print(student2)
+# print(student3)
+
+#2
+# class Car:
+#     def __init__(self, brand, model, year):
+#         self.brand = brand
+#         self.model = model
+#         self.year = year
+
+#     def display_info(self):
+#         print(f"Автомобиль: {self.brand} {self.model}, Год выпуска: {self.year}")
+
+# car1 = Car("Toyota", "Camry", 2022)
+# car2 = Car("BMW", "X5", 2024)
+# car3 = Car("Tesla", "Model", 2023)
+
+# car1.display_info()
+# car2.display_info()
+# car3.display_info()
+
+#3
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+
+#     def calculate(self):
+#         return self.width * self.height
+
+#     def calculate_perimeter(self):
+#         return 2 * (self.width + self.height)
+
+# rect = Rectangle(5, 10)
+
+# print(f"Прямоугольник со сторонами: {rect.width} x {rect.height}")
+# print(f"Площадь: {rect.calculate()}")
+# print(f"Периметр: {rect.calculate_perimeter()}")
+
+#4
+# class BankAccount:
+#     def __init__(self, owner, balance=0.0):
+#         self.owner = owner
+#         self.balance = balance
+
+#     def deposit(self, amount):
+#         if amount > 0:
+#             self.balance += amount
+#             print(f"Счет пополнен на {amount}. Текущий баланс: {self.balance}")
+#         else:
+#             print("Сумма пополнения должна быть положительной.")
+
+#     def withdraw(self, amount):
+#         if 0 < amount <= self.balance:
+#             self.balance -= amount
+#             print(f"Снято {amount}. Остаток на счете: {self.balance}")
+#         else:
+#             print("Ошибка: недостаточно средств или неверная сумма.")
+
+#     def display_info(self):
+#         print(f"Владелец счета: {self.owner}, Баланс: {self.balance} руб.")
+
+# my_account = BankAccount("Алексей", 5000.0)
+
+# my_account.display_info()
+# my_account.deposit(2000)
+# my_account.withdraw(1500)
+# my_account.withdraw(10000)
+# my_account.display_info()
+
+
+#5
+# class BankAccount:
+#     def __init__(self, owner, balance=0.0):
+#         self.owner = owner
+#         self.balance = balance
+
+#     def deposit(self, amount):
+#         if amount > 0:
+#             self.balance += amount
+#             print(f"Счет пополнен на {amount}. Текущий баланс: {self.balance}")
+#         else:
+#             print("Ошибка: сумма пополнения должна быть положительной.")
+
+#     def withdraw(self, amount):
+#         if amount <= 0:
+#             print("Ошибка: сумма для снятия должна быть положительной.")
+#         elif amount > self.balance:
+#             print(f"Отказано в снятии: запрошено {amount}, но на балансе только {self.balance}.")
+#         else:
+#             self.balance -= amount
+#             print(f"Успешно снято: {amount}. Остаток на счете: {self.balance}")
+
+#     def display_balance(self):
+#         print(f"Владелец счета: {self.owner} | Баланс: {self.balance}")
+
+# account = BankAccount("Ali", 5000.0)
+# account.display_balance()
+# account.deposit(1500)
+# account.withdraw(2000)
+# account.withdraw(10000)
+# account.display_balance()
+
+#6
+# class Animal:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def eat(self):
+#         print(f"{self.name} кушает.")
+
+# class Dog(Animal):
+#     def bark(self):
+#         print(f"{self.name} громко лает: Гав-гав!")
+
+# class Cat(Animal):
+#     def purr(self):
+#         print(f"{self.name} сладко мурлычет: Мур-мур...")
+
+# class Bird(Animal):
+#     def sing(self):
+#         print(f"{self.name} красиво поёт на ветке.")
+
+# dog = Dog("Сабака", 3)
+# cat = Cat("Кошка", 2)
+# bird = Bird("птица", 1)
+
+# dog.eat()
+# cat.eat()
+# bird.eat()
+
+# print("-" * 30)
+
+# dog.bark()
+# cat.purr()
+# bird.sing()
+
+#7
+# class Product:
+#     def __init__(self, name, price):
+#         self.name = name
+#         self.price = price
+
+#     def display_info(self):
+#         print(f"Товар: {self.name} — {self.price} руб.")
+
+
+# class Order:
+#     def __init__(self, customer_name):
+#         self.customer_name = customer_name
+#         self.products = []  # Список товаров в заказе
+
+#     def add_product(self, product):
+#         self.products.append(product)
+#         print(f"Товар «{product.name}» добавлен в заказ {self.customer_name}.")
+
+#     def calculate_total(self):
+#         total = sum(product.price for product in self.products)
+#         return total
+
+#     def display_order(self):
+#         print(f"\n--- Заказ клиента: {self.customer_name} ---")
+#         if not self.products:
+#             print("Заказ пуст.")
+#         else:
+#             for item in self.products:
+#                 print(f"- {item.name}: {item.price} руб.")
+#             print(f"Итого к оплате: {self.calculate_total()} руб.")
+
+
+# p1 = Product("Клавиатура", 3500)
+# p2 = Product("Мышь", 1800)
+# p3 = Product("Монитор", 22000)
+
+# my_order = Order("Дмитрий")
+# my_order.add_product(p1)
+# my_order.add_product(p2)
+# my_order.add_product(p3)
+# my_order.display_order()
+
 #8
+# class Book:
+#     def __init__(self, title, author):
+#         self.title = title
+#         self.author = author
+
+#     def display_info(self):
+#         print(f"«{self.title}» — {self.author}")
+
+
+# class Library:
+#     def __init__(self, name):
+#         self.name = name
+#         self.books = []
+
+#     def add_book(self, book):
+#         self.books.append(book)
+#         print(f"Книга «{book.title}» добавлена в библиотеку «{self.name}».")
+
+#     def find_by_author(self, author):
+#         print(f"\nПоиск книг автора {author}:")
+#         found_books = [book for book in self.books if book.author.lower() == author.lower()]
+        
+#         if found_books:
+#             for book in found_books:
+#                 book.display_info()
+#         else:
+#             print("Книги этого автора не найдены.")
+
+#     def display_all_books(self):
+#         print(f"\n--- Список книг библиотеки «{self.name}» ---")
+#         if not self.books:
+#             print("Библиотека пуста.")
+#         else:
+#             for book in self.books:
+#                 book.display_info()
+
+# library = Library("Городская библиотека")
+
+# b1 = Book("Преступление и наказание", "Фёдор Достоевский")
+# b2 = Book("Идиот", "Фёдор Достоевский")
+# b3 = Book("Война и мир", "Лев Толстой")
+
+# library.add_book(b1)
+# library.add_book(b2)
+# library.add_book(b3)
+
+# library.display_all_books()
+# library.find_by_author("Фёдор Достоевский")
+
+#9
+# from abc import ABC, abstractmethod
+
+# class Payment(ABC):
+#     @abstractmethod
+#     def process_payment(self, amount):
+#         pass
+
+
+# class CreditCardPayment(Payment):
+#     def __init__(self, card_number):
+#         self.card_number = card_number
+
+#     def process_payment(self, amount):
+#         print(f"Списание {amount} руб. с банковской карты (**** {self.card_number[-4:]}). Успешно!")
+
+
+# class PayPalPayment(Payment):
+#     def __init__(self, email):
+#         self.email = email
+
+#     def process_payment(self, amount):
+#         print(f"Списание {amount} руб. через аккаунт PayPal ({self.email}). Успешно!")
+
+
+# class CryptoPayment(Payment):
+#     def __init__(self, wallet_address):
+#         self.wallet_address = wallet_address
+
+#     def process_payment(self, amount):
+#         print(f"Транзакция на сумму {amount} руб. отправлена на криптокошелек ({self.wallet_address[:6]}...). Ожидает подтверждения сети.")
+
+
+# def make_payment(payment_method, amount):
+#     print("Инициализация платежа...")
+#     payment_method.process_payment(amount)
+#     print("-" * 40)
+
+# card = CreditCardPayment("4276380012345678")
+# paypal = PayPalPayment("user@example.com")
+# crypto = CryptoPayment("0x12345abcdef7890")
+
+# make_payment(card, 1500)
+# make_payment(paypal, 3200)
+# make_payment(crypto, 10500)
+
+#10
+# class Product:
+#     def init(self, name, price):
+#         self.name = name
+#         self.price = price
+
+
+# class Electronics(Product):
+#     def init(self, name, price, warranty_years):
+#         super().init(name, price)
+#         self.warranty_years = warranty_years
+
+
+# class Clothing(Product):
+#     def init(self, name, price, size):
+#         super().init(name, price)
+#         self.size = size
+
+
+# class Food(Product):
+#     def init(self, name, price, expiration_date):
+#         super().init(name, price)
+#         self.expiration_date = expiration_date
+
+
+
+# products = [
+#     Electronics("Smartphone", 599.99, 2),
+#     Clothing("T-shirt", 19.99, "M"),
+#     Food("Chocolate", 1.99, "2026-12-31"),
+# ]
+
+# for product in products:
+#     print(f"{product.name}: ${product.price}")
+
+#11
+# class Dog:
+#     def make_sound(self):
+#         return "Woof!"
+
+
+# class Cat:
+#     def make_sound(self):
+#         return "Meow!"
+
+
+# class Cow:
+#     def make_sound(self):
+#         return "Moo!"
+
+
+# animals = [Dog(), Cat(), Cow()]
+
+# for animal in animals:
+#     print(animal.make_sound())
+
+#12
+# # class CashPayment:
+#     def pay(self, amount):
+#         return f"Paid {amount} in cash."
+
+
+# class CardPayment:
+#     def pay(self, amount):
+#         return f"Paid {amount} by card."
+
+
+# class OnlinePayment:
+#     def pay(self, amount):
+#         return f"Paid {amount} online."
+
+
+# def process_payment(payment, amount):
+#     print(payment.pay(amount))
+
+
+# payments = [CashPayment(), CardPayment(), OnlinePayment()]
+
+# for payment in payments:
+#     process_payment(payment, 100)
+#13
+# import math
+
+# class Circle:
+#     def init(self, radius):
+#         self.radius = radius
+
+#     def area(self):
+#         return math.pi * self.radius ** 2
+
+
+# class Rectangle:
+#     def init(self, width, height):
+#         self.width = width
+#         self.height = height
+
+#     def area(self):
+#         return self.width * self.height
+
+
+# class Triangle:
+#     def init(self, base, height):
+#         self.base = base
+#         self.height = height
+
+#     def area(self):
+#         return 0.5 * self.base * self.height
+
+
+# shapes = [
+#     Circle(5),
+#     Rectangle(4, 6),
+#     Triangle(3, 8)
+# ]
+
+# for shape in shapes:
+#     print(shape.area())
+#14
+# class Car:
+#     def move(self):
+#         return "The car drives on the road."
+
+
+# class Bicycle:
+#     def move(self):
+#         return "The bicycle rides on the road."
+
+
+# class Airplane:
+#     def move(self):
+#         return "The airplane flies through the sky."
+
+
+# def start_moving(transport):
+#     print(transport.move())
+
+
+# transports = [Car(), Bicycle(), Airplane()]
+
+# for transport in transports:
+#     start_moving(transport)
+#15
+# class EmailNotification:
+#     def send(self, message):
+#         print(f"Email: {message}")
+
+
+# class SMSNotification:
+#     def send(self, message):
+#         print(f"SMS: {message}")
+
+
+# class PushNotification:
+#     def send(self, message):
+#         print(f"Push notification: {message}")
+
+
+# def send_notification(notification, message):
+#     notification.send(message)
+
+
+# send_notification(EmailNotification(), "Your order has shipped.")
+# send_notification(SMSNotification(), "Your order has shipped.")
+# send_notification(PushNotification(), "Your order has shipped.")
