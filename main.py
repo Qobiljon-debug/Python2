@@ -979,7 +979,7 @@
 # slow()
 # def only_positive(func):
 #     def wrapper(*args,**kwargs):
-#         if any(isinstance(arg,(int,float)) and arg<0 for arg in args):
+#         if any(isinstance(arg,(in)) and arg<0 for arg in args):
 #             print("Negative numbers not allowed")
 #             return None
 #         return func(*args,**kwargs)
@@ -2051,3 +2051,369 @@
 # send_notification(EmailNotification(), "Your order has shipped.")
 # send_notification(SMSNotification(), "Your order has shipped.")
 # send_notification(PushNotification(), "Your order has shipped.")
+
+
+
+
+
+
+#////////////////////////////////////////// Home Work /////////////////////////////////////////////
+# #1
+# class Student:
+#     def __init__(self,grade):
+#         self.__grade=grade
+#     def getter(self):
+#         return self.__grade
+#     def setter(self,new_gropes):
+#         if new_gropes>0 and new_gropes<-100:
+#             return
+
+
+
+
+#1
+# class Book:
+#     def __init__(self, title, pages):
+#         self.__title = title
+#         self.__pages = 0
+#         self.set_pages(pages)
+
+#     def get_title(self):
+#         return self.__title
+
+#     def get_pages(self):
+#         return self.__pages
+
+#     def set_pages(self, pages):
+#         if pages > 0:
+#             self.__pages = pages
+#         else:
+#             print("nodurust: бояд аз 0 калон бошад.")
+
+
+# book1 = Book("дуруст", 500)
+# print(book1.get_title()) 
+# print(book1.get_pages())  
+
+# book1.set_pages(-10)      
+# print(book1.get_pages()) 
+            
+#2
+# class Dog:
+#     def __init__(self, name, age):
+#         self.__name = name
+#         self.__age=0
+#         self.set_age(age)
+
+#     def get_name(self):
+#         return self.__name
+    
+#     def get_age(self):
+#      return self.__age
+
+#     def set_age(self, age):
+#         if 0 <= age <= 30:
+#             self.__age = age
+# d=Dog("Sag",5)
+# print(d.get_name())
+# print(d.get_age())
+
+
+#3
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width = width
+#         self.height = height
+
+#     @property
+#     def width(self):
+#         return self.__width
+
+#     @width.setter
+#     def width(self, value):
+#         if value <= 0:
+#             raise ValueError("Бар (width) бояд адади мусбат бошад!")
+#         self.__width = value
+
+#     @property
+#     def height(self):
+#         return self.__height
+
+#     @height.setter
+#     def height(self, value):
+#         if value <= 0:
+#             raise ValueError("Баландӣ (height) бояд адади мусбат бошад!")
+#         self.__height = value
+
+#     def area(self):
+#         return self.__width * self.__height
+
+
+# if __name__ == "__main__":
+#     rect = Rectangle(4.0, 5.0)
+#     print(f"Масоҳат: {rect.area()}")    
+
+
+#4
+# class Counter:
+#     def __init__(self, count: int = 0):
+#         self.__count = max(0, count)
+
+#     def increment(self):
+#         self.__count += 1
+
+#     def decrement(self):
+#         if self.__count > 0:
+#             self.__count -= 1
+
+#     def get_count(self):
+#         return self.__count
+
+# c = Counter()
+# print(c.get_count())  
+
+# c.decrement()        
+# print(c.get_count())   
+
+# c.increment()
+# c.increment()
+# print(c.get_count())   
+
+# c.decrement()
+# print(c.get_count())   
+        
+
+#5
+# class Counter:
+#     def init(self):
+#         self.count = 0
+
+#     def increment(self):
+#         self.__count += 1
+
+#     def decrement(self):
+#         if self.__count > 0:
+#             self.__count -= 1
+
+#     def get_count(self):
+#         return self.__count
+
+# counter = Counter()
+
+# counter.increment()
+# counter.increment()
+# print(counter.get_count())
+
+# counter.decrement()
+# print(counter.get_count())  
+
+# counter.decrement()
+# counter.decrement()
+# print(counter.get_count())
+#6
+# class Light:
+#     def __init(self):
+#         self.is_on = False
+
+#     def turn_on(self):
+#         self.__is_on = True
+
+#     def turn_off(self):
+#         self.__is_on = False
+
+#     def is_on(self):
+#         return self.__is_on
+
+
+# light = Light()
+# print(light.is_on())
+
+# light.turn_on()
+# print(light.is_on())
+
+# light.turn_off()
+# print(light.is_on())
+
+
+#7
+# class Wallet:
+#     def __init(self):
+#         self.money = 0
+
+#     def add_money(self, amount):
+#         if amount > 0:
+#             self.__money += amount
+
+#     def spend_money(self, amount):
+#         if 0 < amount <= self.__money:
+#             self.__money -= amount
+
+#     def get_money(self):
+#         return self.__money
+
+
+# wallet = Wallet()
+# wallet.add_money(100)
+# wallet.spend_money(30)
+# print(wallet.get_money())
+
+
+#8
+# class Square:
+#     def __init(self, side):
+#         if side <= 0:
+#             raise ValueError("Tarafosh ziyod bosha")
+#         self.side = side
+
+#     def get_side(self):
+#         return self.__side
+
+#     def set_side(self, side):
+#         if side <= 0:
+#             raise ValueError("Tarafosh ziyod bosha")
+#         self.__side = side
+
+#     def get_area(self):
+#         return self.__side ** 2
+
+
+# square = Square(5)
+# print(square.get_side())
+# print(square.get_area())
+
+# square.set_side(3)
+# print(square.get_area())
+
+#9
+# class Phone:
+#     def __init(self):
+#         self.battery = 0
+
+#     def charge(self, amount):
+#         self.__battery = min(100, max(0, self.__battery + amount))
+
+#     def use(self, amount):
+#         self.__battery = min(100, max(0, self.__battery - amount))
+
+#     def get_battery(self):
+#         return self.__battery
+
+
+# phone = Phone()
+# phone.charge(70)
+# print(phone.get_battery())
+
+# phone.use(25)
+# print(phone.get_battery())
+
+# phone.charge(80)
+# print(phone.get_battery())
+#10
+# class User:
+#     def __init(self, password):
+#         self.set_password(password)
+
+#     def set_password(self, password):
+#         if not isinstance(password, str) or len(password) < 6:
+#             raise ValueError("Boyad ay 6 raqam ziyod bosha")
+#         self.password = password
+
+#     def check_password(self, p):
+#         return self.__password == p
+
+
+# user = User("secret123")
+# print(user.check_password("secret123"))
+# print(user.check_password("wrong"))
+
+
+#11
+# class Thermostat:
+#     def __init(self, target):
+#         self.set_target(target)
+
+#13
+# class Employee:
+#     def __init__(self, salary):
+#         self.salary = salary
+
+#     @property
+#     def salary(self):
+#         return self.__salary
+
+#     @salary.setter
+#     def salary(self, value):
+#         if value < 0:
+#             print("оилик аз 0 кам намешавад!")
+#             self.__salary 
+#         else:
+#             self.__salary = value
+
+#     def raise_salary(self, percent):
+#         self.salary += self.__salary * (percent / 100)
+
+
+# lst = Employee(100)
+# lst.raise_salary(12) 
+# print(lst.salary)    
+
+
+
+#     def get_target(self):
+#         return self.target
+
+#     def set_target(self, value):
+#         if not 10 <= value <= 30:
+#             raise ValueError("Temperatura ay 10 to 30 bosha")
+#         self.__target = value
+
+
+# thermostat = Thermostat(22)
+# print(thermostat.get_target())
+
+# thermostat.set_target(25)
+# print(thermostat.get_target())
+
+#14
+# class Car:
+#     def __init(self,speed):
+#         self.speed = speed
+        
+#     def accelerate(self,speed):
+#         if speed > 200: 
+#             return "Stop"
+#         return"Run"     
+    
+#     def brake(self,n):
+#         if n > 0 and n <= 200:
+#             self.__speed = n
+#             return True
+#         return False
+    
+# d = Car(150)
+# print(d.accelerate(150))
+# print(d.brake(150))
+
+#15
+# class Employee:
+#     def __init(self, salary):
+#         self.set_salary(salary)
+
+#     def get_salary(self):
+#         return self.__salary
+
+#     def set_salary(self, salary):
+#         if salary < 0:
+#             raise ValueError("Pl nest")
+#         self.__salary = salary
+
+#     def raise_salary(self, percent):
+#         if percent > 0:
+#             self.__salary += self.__salary * percent / 100
+
+
+# employee = Employee(500)
+# print(employee.get_salary())
+
+# employee.raise_salary(10)
+# print(employee.get_salary())
